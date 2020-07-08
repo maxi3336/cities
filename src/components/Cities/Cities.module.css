@@ -1,0 +1,21 @@
+.content {
+    position: relative;
+    width: 553px;
+    border-radius: 0 0 15px 15px;
+    overflow:hidden;
+}
+
+.cities {
+    position: relative;
+    z-index: 2;
+    background: rgba(70,70,70,0.5);
+    padding: 15px;
+    width: 570px;
+    margin: 0 auto;
+    min-height: 200px;
+    max-height: 700px;
+    overflow-y:scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
