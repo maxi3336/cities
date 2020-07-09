@@ -5,8 +5,13 @@ import City from "./City/City";
 const Cities = (props) => {
 
     let cities = props.cities.map(city => {
+
+        let click = () => {
+            props.addCity(city.id)
+        }
+
         if(!city.mark)
-            return <City name={city.name}/>
+            return <City click = {click} key={city.id} name={city.name}/>
     })
 
     return (
