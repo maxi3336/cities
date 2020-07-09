@@ -10,8 +10,7 @@ const Selected = (props) => {
             props.removeCity(city.id)
         }
 
-        if(city.mark)
-            return <City click={click} key={city.id} name={city.name}/>
+        return <City click={click} key={city.id} name={city.name}/>
     })
 
     return (

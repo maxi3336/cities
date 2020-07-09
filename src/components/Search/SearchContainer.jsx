@@ -1,13 +1,13 @@
-import React from 'react'
 import Search from "./Search";
 import {connect} from "react-redux";
-import {updateNewTextActionCreatore} from "../../redux/citiesReducer";
+import {updateNewTextActionCreator} from "../../redux/reducers/citiesReducer";
 
 const mapStateToProps = (state) => ({text: state.cities.newText})
 
 const mapDispatchToProps = (dispatch) => ({
     updateNewText: (text) => {
-        let action = updateNewTextActionCreatore(text)
+        if (text) text = text[0].toUpperCase() + text.slice(1)
+        let action = updateNewTextActionCreator(text)
         dispatch(action)
     }
 })

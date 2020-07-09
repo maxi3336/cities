@@ -1,5 +1,5 @@
 import {createStore, combineReducers} from "redux";
-import citiesReducer from "./citiesReducer";
+import citiesReducer from "./reducers/citiesReducer";
 
 let reducers = combineReducers({
     cities: citiesReducer

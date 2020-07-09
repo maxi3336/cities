@@ -1,16 +1,29 @@
-import React from 'react'
 import {connect} from "react-redux";
 import Cities from "./Cities";
-import {addCityActionCreator} from "../../redux/citiesReducer";
+import {addCityActionCreator, cities} from "../../redux/reducers/citiesReducer";
 
-const mapStateToProps = (state) => ({cities: state.cities.cities})
+const mapStateToProps = (state) => ({cities: cities, newText: state.cities.newText})
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        addCity: (id) => {
-            let action = addCityActionCreator(id)
-            dispatch(action)
+
+    let showCity = (text, name) => {
+        let newName = ''
+        for(let i = 0; i < text.length; i++) {
+            newName += name[i]
         }
+
+        if(newName === text)
+             return true
+
+        return false
+    }
+
+    return {
+        addCity: (id, name) => {
+            let action = addCityActionCreator(id, name)
+            dispatch(action)
+        },
+        showCity: showCity
     }
 }
 

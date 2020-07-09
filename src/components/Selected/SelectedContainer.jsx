@@ -1,14 +1,13 @@
-import React from 'react'
 import Selected from "./Selected";
 import {connect} from "react-redux";
-import {addCityActionCreator, removeCityActioncreator} from "../../redux/citiesReducer";
+import {removeCityActionСreator} from "../../redux/reducers/citiesReducer";
 
-const mapStateToProps = (state) => ({cities: state.cities.cities})
+const mapStateToProps = (state) => ({cities: state.cities.selectedCities})
 
 const mapDispatchToProps = (dispatch) => {
     return {
         removeCity: (id) => {
-            const action = removeCityActioncreator(id)
+            const action = removeCityActionСreator(id)
             dispatch(action)
         }
     }

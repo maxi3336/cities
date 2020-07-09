@@ -7,11 +7,12 @@ const Cities = (props) => {
     let cities = props.cities.map(city => {
 
         let click = () => {
-            props.addCity(city.id)
+            props.addCity(city.city_id, city.name)
         }
 
-        if(!city.mark)
-            return <City click = {click} key={city.id} name={city.name}/>
+        //Вместо этого всего: showCity
+        if((props.newText.length >= 3) && (props.showCity(props.newText, city.name)))
+            return <City click = {click} key={city.city_id} name={city.name}/>
     })
 
     return (
