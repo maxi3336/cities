@@ -20,9 +20,16 @@
     align-items: center;
 }
 
+.cities {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
 .scroll {
     position: absolute;
-    right: 20%;
+    left: 36%;
     bottom: 50px;
     z-index: 2;
     color: white;
