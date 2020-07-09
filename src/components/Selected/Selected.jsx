@@ -1,11 +1,10 @@
 import React from 'react'
-import style from './Cities.module.css'
+import style from './Selected.module.css'
 import City from "./City/City";
 
-const Cities = (props) => {
-
+const Selected = (props) => {
     let cities = props.cities.map(city => {
-        if(!city.mark)
+        if(city.mark)
             return <City name={city.name}/>
     })
 
@@ -18,4 +17,4 @@ const Cities = (props) => {
     )
 }
 
-export default Cities
+export default Selected

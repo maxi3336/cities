@@ -1,0 +1,28 @@
+.city {
+    min-width: 50%;
+    margin: 5px 0;
+    padding: 10px;
+    line-height: 0;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h2 {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    font-weight: 300;
+}
+
+.dlt:hover {
+    cursor: pointer;
+    color: #C2C2C2;
+}
+
+.dlt:active {
+    color: #969696;
+}
