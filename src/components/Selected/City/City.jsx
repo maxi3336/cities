@@ -5,7 +5,7 @@ const City = (props) => {
     return (
         <div className={style.city}>
             <h2>{props.name}</h2>
-            <div className={"material-icons " + style.dlt}>
+            <div className={"material-icons " + style.dlt} onClick={props.click}>
                 delete
             </div>
         </div>

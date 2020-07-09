@@ -3,9 +3,15 @@ import style from './Selected.module.css'
 import City from "./City/City";
 
 const Selected = (props) => {
+
     let cities = props.cities.map(city => {
+
+        let click = () => {
+            props.removeCity(city.id)
+        }
+
         if(city.mark)
-            return <City name={city.name}/>
+            return <City click={click} key={city.id} name={city.name}/>
     })
 
     return (
