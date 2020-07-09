@@ -1,3 +1,4 @@
+//Получение значения текущего localState
 let GetLocalState = () => {
     let localStateStr = localStorage.getItem('localState')
     localStateStr = JSON.parse(localStateStr)

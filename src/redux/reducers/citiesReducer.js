@@ -1,22 +1,24 @@
 import GetLocalState from "./localState/GetLocalState";
 
+//Получение списка городов из json файла:
+export const cities = require('../../assets/citiesList.json').city
+
 const ADD_CITY = 'ADD-CITY'
 const REMOVE_CITY = 'REMOVE-CITY'
 const UPDATE_TEXT = 'UPDATE-TEXT'
 
-export const cities = require('../../assets/citiesList.json').city
-
-let initialState = {    //Должен считывать города из JSON
+//Инициализация state
+let initialState = {
     selectedCities: [],
     newText: ''
 }
 
+//Проверка не является ли localState пустым:
 if (GetLocalState() === null) {
-
     localStorage.setItem('initialState', JSON.stringify(initialState))
-
 } else initialState = GetLocalState()
 
+//Функция для записи state в localState
 let setLocalState = (state) => {
     let localStateStr = JSON.stringify(state)
     localStorage.clear()
@@ -30,10 +32,13 @@ const citiesReducer = (state=initialState, action) => {
     switch (action.type) {
         case ADD_CITY:
             let isSelected = false;
+
+            //Проверка: добавлен ли уже этот город
             state.selectedCities.map(city => {
                 if(city.name === action.name)
                     isSelected = true
             })
+
             if(!isSelected) {
                 copyState = {
                     ...state,
