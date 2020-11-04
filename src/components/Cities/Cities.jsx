@@ -10,7 +10,6 @@ const Cities = (props) => {
             props.addCity(city.city_id, city.name)
         }
 
-        //Вместо этого всего: showCity
         if((props.newText.length >= 3) && (props.showCity(props.newText, city.name)))
             return <City click = {click} key={city.city_id} name={city.name}/>
     })
